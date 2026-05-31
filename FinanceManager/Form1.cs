@@ -63,11 +63,11 @@ namespace FinanceManager
             // Включаем водяной знак для поля названия
             SendMessage(textBoxName.Handle, 0x1501, 1, "Название");
 
-            comboBoxCatigory.Items.Clear();
-            comboBoxCatigory.Items.AddRange(categories.ToArray());
+            comboBoxCategory.Items.Clear();
+            comboBoxCategory.Items.AddRange(categories.ToArray());
 
-            comboBoxCatigory.SelectedIndex = -1;
-            comboBoxCatigory.Text = "Категория";
+            comboBoxCategory.SelectedIndex = -1;
+            comboBoxCategory.Text = "Категория";
         }
 
         private void btnAddSpending_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace FinanceManager
                 return;
             }
 
-            if (comboBoxCatigory.SelectedIndex == -1 || comboBoxCatigory.Text == "Категория")
+            if (comboBoxCategory.SelectedIndex == -1 || comboBoxCategory.Text == "Категория")
             {
                 MessageBox.Show("Пожалуйста, выберите категорию траты!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -101,13 +101,13 @@ namespace FinanceManager
             item.SubItems[1].ForeColor = System.Drawing.Color.FromArgb(192, 57, 43);
             item.SubItems[1].Font = new System.Drawing.Font("Segoe UI", 9, System.Drawing.FontStyle.Bold);
 
-            item.SubItems.Add(comboBoxCatigory.Text);
+            item.SubItems.Add(comboBoxCategory.Text);
             listViewTransactions.Items.Add(item);
 
             numericUpDownPrice.Value = 0;
             textBoxName.Text = "";
-            comboBoxCatigory.SelectedIndex = -1;
-            comboBoxCatigory.Text = "Категория";
+            comboBoxCategory.SelectedIndex = -1;
+            comboBoxCategory.Text = "Категория";
         }
 
         // Автоматическое сохранение в JSON ПРИ ЗАКРЫТИИ программы

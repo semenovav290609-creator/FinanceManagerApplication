@@ -33,7 +33,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
-            this.comboBoxCatigory = new System.Windows.Forms.ComboBox();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.btnAddSpending = new System.Windows.Forms.Button();
             this.lblBalance = new System.Windows.Forms.Label();
             this.listViewTransactions = new System.Windows.Forms.ListView();
@@ -101,14 +101,14 @@
             this.numericUpDownPrice.TabIndex = 6;
             this.numericUpDownPrice.ValueChanged += new System.EventHandler(this.numericUpDownPrice_ValueChanged);
             // 
-            // comboBoxCatigory
+            // comboBoxCategory
             // 
-            this.comboBoxCatigory.FormattingEnabled = true;
-            this.comboBoxCatigory.Location = new System.Drawing.Point(1, 173);
-            this.comboBoxCatigory.Name = "comboBoxCatigory";
-            this.comboBoxCatigory.Size = new System.Drawing.Size(267, 21);
-            this.comboBoxCatigory.TabIndex = 7;
-            this.comboBoxCatigory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCatigory_SelectedIndexChanged);
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Location = new System.Drawing.Point(1, 173);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(267, 21);
+            this.comboBoxCategory.TabIndex = 7;
+            this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCatigory_SelectedIndexChanged);
             // 
             // btnAddSpending
             // 
@@ -172,7 +172,7 @@
             this.Controls.Add(this.listViewTransactions);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.btnAddSpending);
-            this.Controls.Add(this.comboBoxCatigory);
+            this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.numericUpDownPrice);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.groupBox1);
@@ -192,7 +192,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.NumericUpDown numericUpDownPrice;
-        private System.Windows.Forms.ComboBox comboBoxCatigory;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Button btnAddSpending;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.ListView listViewTransactions;
