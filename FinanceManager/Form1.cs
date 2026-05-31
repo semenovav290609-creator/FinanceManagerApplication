@@ -16,7 +16,7 @@ namespace FinanceManager
         private string filePath = "finance_data.json";
 
         // Переменные для хранения данных
-        private int balance = 5000;
+        private int balance = 0;
         private int totalSp = 0;
         private List<string> categories = new List<string>()
         {
