@@ -86,8 +86,8 @@ namespace FinanceManager
                 return;
             }
 
-            balance = balance - currentSpending;
-            totalSp = totalSp + currentSpending;
+            balance -= currentSpending;
+            totalSp += currentSpending;
 
             lblBalance.Text = $"Общий баланс: {balance}₽";
             totalSpent.Text = $"Итого потрачено: {totalSp}.00 ₽";
@@ -109,6 +109,28 @@ namespace FinanceManager
             comboBoxCategory.SelectedIndex = -1;
             comboBoxCategory.Text = "Категория";
         }
+        private void btnIncomeBlance_Click(object sender, EventArgs e)
+        {
+            // 1. Получаем сумму дохода
+            int curentIncome = (int)numericUpDownIncome.Value;
+
+            // Проверка: если ввели 0 или меньше, ничего не делаем
+            if (curentIncome <= 0)
+            {
+                MessageBox.Show("Введите сумму дохода больше нуля!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 2. Математически ПРИБАВЛЯЕМ доход к балансу
+            balance = balance + curentIncome; // или balance += curentIncome;
+
+            // 3. ПЕРЕЗАПИСЫВАЕМ текст на экране (используем =, а не +=)
+            lblBalance.Text = $"Общий баланс: {balance}₽";
+
+            // 4. Сбрасываем поле ввода дохода на ноль
+            numericUpDownIncome.Value = 0;
+        }
+
 
         // Автоматическое сохранение в JSON ПРИ ЗАКРЫТИИ программы
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -195,5 +217,7 @@ namespace FinanceManager
         private void listViewTransactions_SelectedIndexChanged(object sender, EventArgs e) { }
         private void textBox1_Enter(object sender, EventArgs e) { }
         private void textBoxName_TextChanged(object sender, EventArgs e) { }
+        private void numericUpDownIncome_ValueChanged(object sender, EventArgs e) { }
+
     }
 }
