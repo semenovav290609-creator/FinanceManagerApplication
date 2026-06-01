@@ -95,7 +95,7 @@ namespace FinanceManager
             string spendingName = string.IsNullOrWhiteSpace(textBoxName.Text) ? "Без названия" : textBoxName.Text;
 
             ListViewItem item = new ListViewItem(spendingName);
-            item.SubItems.Add($"-{currentSpending} ₽");
+            item.SubItems.Add($"-{currentSpending} ₽ Дата: [{DateTime.Now.ToString("dd.MM.yyyy")}]");
 
             item.UseItemStyleForSubItems = false;
             item.SubItems[1].ForeColor = System.Drawing.Color.FromArgb(192, 57, 43);
@@ -131,6 +131,36 @@ namespace FinanceManager
             numericUpDownIncome.Value = 0;
         }
 
+        private void btnDelAllTransaction_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Вы уверены, что хотите полностью очистить историю?",
+                "Подтверждение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                // 1. Очищаем визуальный список (таблицу) на форме
+                listViewTransactions.Items.Clear();                               
+
+                // 3. ОЧИЩАЕМ ФАЙЛ ДО АБСОЛЮТНОЙ ПУСТОТЫ
+                string jsonFilePath = "finance_data.json"; 
+
+                try
+                {
+                    // Этот метод полностью стирает всё внутри файла, оставляя 0 байт текста
+                    File.WriteAllText(jsonFilePath, string.Empty);
+
+                    MessageBox.Show("Всё готово! И на экране, и в файле теперь идеальная пустота.", "Успех");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при работе с файлом: {ex.Message}", "Ошибка");
+                }
+            }
+        }
 
         // Автоматическое сохранение в JSON ПРИ ЗАКРЫТИИ программы
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -217,7 +247,6 @@ namespace FinanceManager
         private void listViewTransactions_SelectedIndexChanged(object sender, EventArgs e) { }
         private void textBox1_Enter(object sender, EventArgs e) { }
         private void textBoxName_TextChanged(object sender, EventArgs e) { }
-        private void numericUpDownIncome_ValueChanged(object sender, EventArgs e) { }
-
+        private void numericUpDownIncome_ValueChanged(object sender, EventArgs e) { }        
     }
 }

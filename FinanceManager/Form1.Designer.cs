@@ -42,6 +42,7 @@
             this.lblIncomeBalace = new System.Windows.Forms.Label();
             this.numericUpDownIncome = new System.Windows.Forms.NumericUpDown();
             this.btnIncomeBlance = new System.Windows.Forms.Button();
+            this.btnDelAllTransaction = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIncome)).BeginInit();
             this.SuspendLayout();
@@ -205,11 +206,24 @@
             this.btnIncomeBlance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncomeBlance.Location = new System.Drawing.Point(558, 152);
             this.btnIncomeBlance.Name = "btnIncomeBlance";
-            this.btnIncomeBlance.Size = new System.Drawing.Size(267, 32);
+            this.btnIncomeBlance.Size = new System.Drawing.Size(267, 47);
             this.btnIncomeBlance.TabIndex = 15;
             this.btnIncomeBlance.Text = "Пополнить баланс";
             this.btnIncomeBlance.UseVisualStyleBackColor = false;
             this.btnIncomeBlance.Click += new System.EventHandler(this.btnIncomeBlance_Click);
+            // 
+            // btnDelAllTransaction
+            // 
+            this.btnDelAllTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelAllTransaction.BackColor = System.Drawing.Color.LightCoral;
+            this.btnDelAllTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelAllTransaction.Location = new System.Drawing.Point(558, 205);
+            this.btnDelAllTransaction.Name = "btnDelAllTransaction";
+            this.btnDelAllTransaction.Size = new System.Drawing.Size(267, 32);
+            this.btnDelAllTransaction.TabIndex = 16;
+            this.btnDelAllTransaction.Text = "Очитить все транзакции";
+            this.btnDelAllTransaction.UseVisualStyleBackColor = false;
+            this.btnDelAllTransaction.Click += new System.EventHandler(this.btnDelAllTransaction_Click);
             // 
             // Form1
             // 
@@ -217,6 +231,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(828, 450);
+            this.Controls.Add(this.btnDelAllTransaction);
             this.Controls.Add(this.btnIncomeBlance);
             this.Controls.Add(this.numericUpDownIncome);
             this.Controls.Add(this.lblIncomeBalace);
@@ -254,6 +269,7 @@
         private System.Windows.Forms.Label lblIncomeBalace;
         private System.Windows.Forms.NumericUpDown numericUpDownIncome;
         private System.Windows.Forms.Button btnIncomeBlance;
+        private System.Windows.Forms.Button btnDelAllTransaction;
     }
 }
 
